@@ -54,7 +54,7 @@
 
             function saveLink(linkObject) {
                 const params = {
-                    TableName: 'LinksTable',
+                    TableName: 'TableLinks',
                     Item: {
                         id: linkObject.id,
                         link: linkObject.link,
@@ -72,7 +72,7 @@
 
             function displayLinks() {
                 const params = {
-                    TableName: 'LinksTable'
+                    TableName: 'TableLinks'
                 };
                 dynamoDB.scan(params, (err, data) => {
                     if (err) {
@@ -102,7 +102,7 @@
 
             function removeLink(id) {
                 const params = {
-                    TableName: 'LinksTable',
+                    TableName: 'TableLinks',
                     Key: {
                         id: id
                     }
